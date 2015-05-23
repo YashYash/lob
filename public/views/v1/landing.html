@@ -1,0 +1,43 @@
+<div class="background"></div>
+<div class="lob-test-overlay"ng-class="{'show-overlay':(getData('LandingController')['Animations'].showOverlay), 'fade-in-overlay': (getData('LandingController')['Animations'].fadeInOverlay)}">
+	<div class="uploading-image overlay-content">
+		<p class="upload-heading">UPLOADING IMAGE</p>
+		<div class="sub-line"></div>
+		<p class="file-name">{{getData('LandingController')['Upload'].name}}</p>
+		<h1>{{getData('LandingController')['Upload'].progress}}%</h1>
+		<div class="loading-container">
+			<div class="loading-line" style="width: {{getData('LandingController')['Upload'].progress}}%"></div>
+		</div>
+	</div>
+	<div class="image-uploaded overlay-content" ng-show="uploadedImage">
+		
+	</div>
+</div>
+<div class="lob-test-container" ng-class="{'blur-container': (getData('LandingController')['Animations'].blurContainer)}">
+  <div class="lob-test-section-one lob-test-sections">
+    <div class="dead-center intro-content">
+      <div class="heading-name" ng-class="{'show-heading-name': (getData('LandingController')['Animations'].showHeadingName)}">
+        <h1>Lob Coding Challenge</h1>
+        <p class="name">Yash Saxena</p>
+        <div class="sub-line"></div>
+      </div>
+      <div class="upload-image-container" ng-class="{'show-upload-container': (getData('LandingController')['Animations'].showUploadContainer)}">
+        <p>PDF to PNG thumbnails</p>
+        <div ngf-drop ngf-select ng-model="files" class="drop-box desktop" ngf-drag-over-class="dragover" ngf-multiple="false" ngf-allow-dir="true" accept="image/*,application/pdf">
+          <span class="icon-cloud-upload"></span>
+          <p>DRAG N DROP PDF FILES HERE</p>
+          <p>- OR -</p>
+          <p>CLICK TO UPLOAD</p>
+        </div>
+        <div ngf-drop ngf-select ng-model="files" class="drop-box mobile" ngf-drag-over-class="dragover" ngf-multiple="false" ngf-allow-dir="true" accept="image/*,application/pdf">
+          <span class="icon-cloud-upload"></span>
+          <p>Tap to upload PDF</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lob-test-section-two lob-test-sections">
+    section 2
+  </div>
+</div>
+<!--https://dff2h0hbfv6w4.cloudfront.net/ZAXSCDVF12345/backgrond-section-7.jpg -->
