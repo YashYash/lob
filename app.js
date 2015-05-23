@@ -96,7 +96,7 @@ if (!process.env.NODE_ENV) {
   console.log('Server listening to port ' + 3000);
   console.log('Using dev database - "lob-dev"')
   appserver.listen(process.env.PORT || 3000);
-  mongoose.connect('mongodb://localhost:27017/base-dev');
+  mongoose.connect('mongodb://pinpoint-founder:kobefederer1qaz@ds049170.mongolab.com:49170/pinpoint');
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
