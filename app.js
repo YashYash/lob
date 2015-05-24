@@ -37,9 +37,11 @@ var routes = require('./routes/index');
 
 // apis
 var user = require('./api/user');
+var lob = require('./api/lob');
 
 var router = express.Router();
 
+// Set middleware
 mongoose.set('debug', true);
 // app.use(logfmt.requestLogger());
 app.set('views', path.join(__dirname, 'views'));
@@ -76,6 +78,7 @@ app.use(function(req, res, next) {
 app.use('/', routes);
 
 /// Apis ///
+app.use('/api/lob', lob);
 app.use('/api/user', user);
 
 

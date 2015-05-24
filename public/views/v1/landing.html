@@ -1,28 +1,34 @@
-<div class="background"></div>
 <div class="lob-test-overlay"ng-class="{'show-overlay':(getData('LandingController')['Animations'].showOverlay), 'fade-in-overlay': (getData('LandingController')['Animations'].fadeInOverlay)}">
-	<div class="uploading-image overlay-content">
+	<div class="uploading-image overlay-content" ng-hide="getData('LandingController')['Upload'].status === 'success'">
 		<p class="upload-heading">UPLOADING IMAGE</p>
 		<div class="sub-line"></div>
 		<p class="file-name">{{getData('LandingController')['Upload'].name}}</p>
 		<h1>{{getData('LandingController')['Upload'].progress}}%</h1>
 		<div class="loading-container">
 			<div class="loading-line" style="width: {{getData('LandingController')['Upload'].progress}}%"></div>
+      <p ng-show="getData('LandingController')['Upload'].status === 'uploaded'" class="uploaded-successfully">UPLOADED SUCCESSFULLY - NOW CONVERTING TO PNG</p>
 		</div>
 	</div>
-	<div class="image-uploaded overlay-content" ng-show="uploadedImage">
-		
+	<div class="convert-to-png overlay-content" ng-show="getData('LandingController')['Upload'].status === 'success' || getData('LandingController')['Upload'].status === 'converted'">
+		<p class="convert-heading">CONVERTING PDF TO PNG</p>
+    <div class="sub-line"></div>
+    <div class="converting-converted" ng-class="{'rotate': (getData('LandingController')['Upload'].convertStatus === 'converting'), 'converted-successfully': (getData('LandingController')['Upload'].convertStatus === 'converted')}">
+      <span class="icon-check" ng-show="getData('LandingController')['Upload'].convertStatus === 'converted'"></span>
+    </div>
+    <p ng-show="getData('LandingController')['Upload'].convertStatus === 'converted'">PDF HAS BEEN CONVERTED SUCCESSFULLY</p>
+    <button ng-show="getData('LandingController')['Upload'].convertStatus === 'converted'" ng-click="viewThumbnails()">view png thumbnails</button>
 	</div>
 </div>
 <div class="lob-test-container" ng-class="{'blur-container': (getData('LandingController')['Animations'].blurContainer)}">
   <div class="lob-test-section-one lob-test-sections">
     <div class="dead-center intro-content">
       <div class="heading-name" ng-class="{'show-heading-name': (getData('LandingController')['Animations'].showHeadingName)}">
-        <h1>Lob Coding Challenge</h1>
+        <h1 ng-click="test()">Lob Coding Challenge</h1>
         <p class="name">Yash Saxena</p>
         <div class="sub-line"></div>
       </div>
       <div class="upload-image-container" ng-class="{'show-upload-container': (getData('LandingController')['Animations'].showUploadContainer)}">
-        <p>PDF to PNG thumbnails</p>
+        <p>PDF TO PNG CONVERTER</p>
         <div ngf-drop ngf-select ng-model="files" class="drop-box desktop" ngf-drag-over-class="dragover" ngf-multiple="false" ngf-allow-dir="true" accept="image/*,application/pdf">
           <span class="icon-cloud-upload"></span>
           <p>DRAG N DROP PDF FILES HERE</p>
@@ -35,9 +41,6 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="lob-test-section-two lob-test-sections">
-    section 2
   </div>
 </div>
 <!--https://dff2h0hbfv6w4.cloudfront.net/ZAXSCDVF12345/backgrond-section-7.jpg -->

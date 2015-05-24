@@ -5,11 +5,11 @@ app.service('StateService', [function() {
   var data = {
     'LandingController': {
       'Upload': {
-        'image': false,
         'progress': 0,
-        'name': false,
+        'name': '',
         'data': false,
-        'status': false
+        'status': false,
+        'convertStatus': false
       },
       'Animations': {
         'showHeadingName': false,
@@ -17,7 +17,12 @@ app.service('StateService', [function() {
         'showOverlay': false,
         'fadeInOverlay': false,
         'blurContainer': false
-      }
+      },
+      'loaded': false
+    },
+    'ThumbnailsController': {
+    	'loaded': false,
+    	'files': []
     }
   }
   return {

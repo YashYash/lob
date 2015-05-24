@@ -1,14 +1,3 @@
-/* Background */
-
-.background {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: url('https://dff2h0hbfv6w4.cloudfront.net/ZAXSCDVF12345/work-background-one.jpg');
-  background-position: center;
-  background-size: cover;
-}
 /* Overlay */
 
 .lob-test-overlay {
@@ -21,7 +10,7 @@
   width: 95%;
   height: 90%;
   z-index: 1;
-  box-shadow: inset 0 0 308px black, 0 0 75px black;
+  box-shadow: inset 0 0 80px black, 0 0 75px black;
   background: rgba(1, 1, 1, 0.3);
   opacity: 0;
   display: none;
@@ -39,6 +28,7 @@
 .lob-test-overlay.fade-in-overlay {
   opacity: 1;
 }
+/* Overlay Content */
 
 .lob-test-overlay > .overlay-content {
   position: absolute;
@@ -50,45 +40,48 @@
   color: white;
   text-align: center;
 }
+/* Uploading Image */
 
-.lob-test-overlay > .overlay-content.uploading-image {
-  width: 500px;
+.uploading-image {
+  width: 90%;
   height: 280px;
 }
 
-.lob-test-overlay > .overlay-content.uploading-image > p.upload-heading {
+.uploading-image > p.upload-heading {
   font-weight: 600;
 }
 
-.lob-test-overlay > .overlay-content.uploading-image > div.sub-line {
+.sub-line {
   height: 2px;
   background: rgba(238, 238, 238, 0.3);
   width: 30px;
   margin: auto;
 }
 
-.lob-test-overlay > .overlay-content.uploading-image > p.file-name {
+.uploading-image > p.file-name {
   font-size: 25px;
   font-weight: 100;
   margin-top: 25px;
   margin-bottom: 35px;
+  line-height: 1.3em;
 }
 
-.lob-test-overlay > .overlay-content.uploading-image > h1 {
+.uploading-image > h1 {
   font-size: 70px;
   font-weight: 100;
   color: white;
 }
+/* Loading Container */
 
-.lob-test-overlay > .overlay-content.uploading-image > div.loading-container {
+.uploading-image > div.loading-container {
   position: relative;
-  width: 80%;
+  width: 430px;
   margin: auto;
   height: 1px;
   margin-top: 35px;
 }
 
-.lob-test-overlay > .overlay-content.uploading-image > div.loading-container > .loading-line {
+.uploading-image > div.loading-container > .loading-line {
   position: absolute;
   left: 0;
   top: 0;
@@ -104,7 +97,74 @@
   -moz-transition: 0.4s;
   -ms-transition: 0.4s;
   -o-transition: 0.4s;
-  transition: 0.4s;  
+  transition: 0.4s;
+}
+
+.uploading-image > div.loading-container > .uploaded-successfully {
+  padding-top: 25px;
+  color: rgb(84, 221, 84);
+}
+/* Convert to PNG */
+
+.convert-to-png {
+  width: 90%;
+  height: 400px;
+  text-align: center;
+}
+
+.convert-to-png > .convert-heading {
+  font-weight: 600;
+}
+
+.convert-to-png > .converting-converted {
+  width: 100px;
+  height: 100px;
+  margin: 40px auto 10px auto;
+  border-radius: 100%;
+  border-left: 1px solid #22c1ee;
+  font-size: 40px;
+  padding-top: 30px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.convert-to-png > .converting-converted.rotate {
+  -webkit-animation: rotate 1s infinite;
+  -moz-animation: rotate 1s infinite;
+  -ms-animation: rotate 1s infinite;
+  -o-animation: rotate 1s infinite;
+  animation: rotate 1s infinite;
+}
+
+.convert-to-png > .converting-converted.converted-successfully {
+  background: rgb(116, 186, 116);
+  border: none;
+}
+
+.convert-to-png > p {
+  padding-top: 30px;
+}
+
+.convert-to-png > button {
+  width: 250px;
+  color: white;
+  height: 40px;
+  border: 1px solid rgba(238, 238, 238, 0.1);
+  margin-top: 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.convert-to-png > button:hover {
+  box-shadow: 0 0 75px black;
 }
 /* Overall Scrollable Container */
 
@@ -320,5 +380,8 @@
   }
   .upload-image-container > .drop-box.mobile {
     display: none;
+  }
+  .lob-test-overlay {
+    box-shadow: inset 0 0 308px black, 0 0 75px black;
   }
 }

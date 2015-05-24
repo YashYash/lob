@@ -46,7 +46,16 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlR
           controller: 'LandingController'
         }
       }
-    })                
+    })
+    .state('app.v1.thumbnails', {
+      url: '/thumbnails',
+      views: {
+        'content@app.v1': {
+          templateUrl: '/views/v1/thumbnails.html',
+          controller: 'ThumbnailsController'
+        }
+      }
+    })                    
 }]);
 
 
