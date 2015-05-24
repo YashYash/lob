@@ -22,6 +22,7 @@ app.controller('LandingController', [
       animateIntro();
     } else {
       console.log('#### Controller has already loaded');
+      console.log(StateService.data);
     }
 
     function init() {
@@ -115,8 +116,6 @@ app.controller('LandingController', [
       convert.then(function(response) {
         if (response.data.status === 'success') {
           StateService.data['ThumbnailsController'].files = response.data.files;
-          console.log('#########');
-          console.log(StateService.data['ThumbnailsController'].files);
           $timeout(function() {
             StateService.data['LandingController']['Upload'].convertStatus = 'converted';
           }, 1200);
@@ -130,7 +129,15 @@ app.controller('LandingController', [
 
     // Swith to view thumbnails state
     $scope.viewThumbnails = function() {
-    	$state.go('app.v1.thumbnails');
+      $state.go('app.v1.thumbnails');
+    };
+    $scope.resetDefaults = function() {
+      StateService.data['ThumbnailsController'].files = [];
+      StateService.data['LandingController']['Upload'].name = '';
+      StateService.data['LandingController']['Upload'].status = false;
+      StateService.data['LandingController']['Upload'].progress = 0;
+      StateService.data['LandingController']['Upload'].convertStatus = false;
+      $scope.hideOverlay();
     };
     // Ui-relayers
     // Watch to see if a file has been added to upload

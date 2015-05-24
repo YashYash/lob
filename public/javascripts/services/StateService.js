@@ -3,6 +3,9 @@ app.service('StateService', [function() {
   console.log('#### State Service');
 
   var data = {
+    'Window': {
+      'location': window.location
+    },
     'LandingController': {
       'Upload': {
         'progress': 0,
@@ -21,8 +24,9 @@ app.service('StateService', [function() {
       'loaded': false
     },
     'ThumbnailsController': {
-    	'loaded': false,
-    	'files': []
+      'loaded': false,
+      'files': [],
+      'currentSlide': 0
     }
   }
   return {

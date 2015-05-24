@@ -39,7 +39,7 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlR
 	  }
     })
     .state('app.v1.landing', {
-      url: '/landing',
+      url: '/landing/:reserve',
       views: {
         'content@app.v1': {
           templateUrl: '/views/v1/landing.html',

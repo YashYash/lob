@@ -1,3 +1,19 @@
 <div class="thumbnails-container">
-	
+	<span class="ion-ios-arrow-thin-right arrows right" ng-click="nextSlide()"></span>
+	<span class="ion-ios-arrow-thin-left arrows left" ng-click="previousSlide()"></span>
+  <div class="preview-thumbnails">
+    <div id="slider-container">
+      <div id="slider-inner-container">
+        <ion-slide-box on-slide-changed="slideHasChanged($index)" delegate-handle="bigslider">
+          <ion-slide ng-repeat="file in getData('ThumbnailsController').files">
+            <div class="preview-container" style="background:url({{getData('Window').location.origin}}/images/{{file}})">
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+      </div>
+    </div>
+  </div>
+  <div class="thumbnails-strip">
+    <div class="thumbnail-image" ng-repeat="file in getData('ThumbnailsController').files" style="background:url({{getData('Window').location.origin}}/images/{{file}})" ng-click="slideTo($index)" ng-class="{'selected': (getData('ThumbnailsController').currentSlide === $index)}"></div>
+  </div>
 </div>
