@@ -16,8 +16,8 @@
       <span class="icon-check" ng-show="getData('LandingController')['Upload'].convertStatus === 'converted'"></span>
     </div>
     <p ng-show="getData('LandingController')['Upload'].convertStatus === 'converted'">PDF HAS BEEN CONVERTED SUCCESSFULLY</p>
-    <button ng-show="getData('LandingController')['Upload'].convertStatus === 'converted' || getData('LandingController')['Upload'].convertStatus === 'converting'" ng-click="resetDefaults()" style="margin-top:45px">upload another pdf</button>
-    <button ng-show="getData('LandingController')['Upload'].convertStatus === 'converted'" ng-click="viewThumbnails()">view png thumbnails</button>
+    <button ng-show="getData('LandingController')['Upload'].convertStatus === 'converted'" ng-click="viewThumbnails()">view png thumbnails</button>    
+    <button ng-show="getData('LandingController')['Upload'].convertStatus === 'converted'" ng-click="resetDefaults()">upload another pdf</button>
   </div>
 </div>
 <div class="lob-test-container" ng-class="{'blur-container': (getData('LandingController')['Animations'].blurContainer)}">
@@ -40,6 +40,7 @@
           <span class="icon-cloud-upload"></span>
           <p>Tap to upload PDF</p>
         </div>
+        <p class="pdf-error" ng-show="pdfError">Uploaded file is not a pdf. Try again</p>
       </div>
     </div>
   </div>

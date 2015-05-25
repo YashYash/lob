@@ -6,7 +6,7 @@
       <div id="slider-inner-container">
         <ion-slide-box on-slide-changed="slideHasChanged($index)" delegate-handle="bigslider">
           <ion-slide ng-repeat="file in getData('ThumbnailsController').files">
-            <div class="preview-container" style="background:url({{getData('Window').location.origin}}/images/{{file}})">
+            <div class="preview-container" style="background:url({{getData('Window').location.origin}}/images/pngs/{{file}})">
             </div>
           </ion-slide>
         </ion-slide-box>
@@ -14,6 +14,6 @@
     </div>
   </div>
   <div class="thumbnails-strip">
-    <div class="thumbnail-image" ng-repeat="file in getData('ThumbnailsController').files" style="background:url({{getData('Window').location.origin}}/images/{{file}})" ng-click="slideTo($index)" ng-class="{'selected': (getData('ThumbnailsController').currentSlide === $index)}"></div>
+    <div class="thumbnail-image" ng-repeat="file in getData('ThumbnailsController').files" style="background:url({{getData('Window').location.origin}}/images/pngs/{{file}})" ng-click="slideTo($index)" ng-class="{'selected': (getData('ThumbnailsController').currentSlide === $index)}"></div>
   </div>
 </div>

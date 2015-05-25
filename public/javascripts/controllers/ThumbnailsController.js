@@ -21,12 +21,15 @@ app.controller('ThumbnailsController', [
     } else {
       console.log('#### Controller has already loaded');
     }
+    // If state is reserved, return user to the slide they were on when they left the page
     $timeout(function() {
       if (StateService.data['ThumbnailsController'].currentSlide > 0) {
         $scope.slideTo(StateService.data['ThumbnailsController'].currentSlide);
       }
     }, 500);
 
+    // Show add another button
+    StateService.data['NavController'].showAddAnotherButton = true;
     function init() {
       // Set loaded to true
       StateService.data['ThumbnailsController'].loaded = true;

@@ -2,8 +2,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width:100%;
-  height:50px;
+  width: 100%;
+  height: 50px;
   z-index: 1;
   background: -moz-linear-gradient(top, rgba(19, 19, 19, 1)0%, rgba(28, 28, 28, .23)77%, rgba(17, 17, 17, .17)83%, rgba(89, 88, 89, .11)89%, rgba(89, 88, 89, 0)100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(19, 19, 19, 1)), color-stop(77%, rgba(28, 28, 28, .23)), color-stop(83%, rgba(17, 17, 17, .17)), color-stop(89%, rgba(89, 88, 89, .11)), color-stop(100%, rgba(89, 88, 89, 0)));
@@ -14,15 +14,40 @@
 }
 
 .nav-container > .logo {
-	width:75px;
-	position: absolute;
-	left:10px;
-	top:10px;
-	cursor: pointer;
+  width: 75px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.nav-container > .add-another-pdf {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 165px;
+  color: white;
+  height: 30px font-size: 12px;
+  border: 1px solid rgba(238, 238, 238, 0.2);
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.nav-container > .add-another-pdf:hover {
+  background: rgba(238, 238, 238, 0.1);
 }
 
 @media(min-width:1025px) {
-	.nav-container > .logo {
-		width:100px;
-	}
+  .nav-container > .logo {
+    width: 100px;
+  }
+  .nav-container > .add-another-pdf {
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+  }
 }

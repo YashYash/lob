@@ -6,6 +6,9 @@ app.service('StateService', [function() {
     'Window': {
       'location': window.location
     },
+    'NavController': {
+    	'showAddAnotherButton': false
+    },
     'LandingController': {
       'Upload': {
         'progress': 0,

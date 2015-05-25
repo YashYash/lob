@@ -9,7 +9,7 @@
 
 .thumbnails-container > .preview-thumbnails {
   position: relative;
-  height: 85%;
+  height: 100%;
   width: 100%;
 }
 
@@ -24,8 +24,8 @@
   height: 100%;
   width: 100%;
 }
-
 /* Arrows */
+
 .thumbnails-container .arrows {
   position: fixed;
   top: 0;
@@ -35,31 +35,32 @@
   height: 40px;
   z-index: 1;
   width: 40px;
-  margin: auto;	
+  margin: auto;
   cursor: pointer;
+  display: none;
 }
+
 .thumbnails-container .arrows.left {
-	right: 560px;
-	left:0;
+  right: 560px;
+  left: 0;
 }
+
 .thumbnails-container .arrows.right {
-	left: 560px;
-	right:0;
+  left: 560px;
+  right: 0;
 }
 /* Preview Container */
 
 .preview-container {
   position: absolute;
-  top: 0;
+  top: 60px;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 500px;
-  width: 400px;
-  background: red;
+  width: 90%;
+  height: 85%;
   margin: auto;
   background-size: cover !important;
-  box-shadow: 0 0 100px black;
 }
 
 .thumbnails-strip {
@@ -74,6 +75,7 @@
   overflow-y: hidden;
   text-align: center;
   white-space: nowrap;
+  display: none;
 }
 
 .thumbnails-strip > .thumbnail-image {
@@ -108,4 +110,21 @@
   -ms-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
+}
+
+@media(min-width:1025px) {
+  .preview-container {
+    height: 500px;
+    width: 400px;
+    box-shadow: 0 0 100px black;
+  }
+  .thumbnails-container > .preview-thumbnails {
+    height: 85%;
+  }
+  .thumbnails-strip {
+    display: block;
+  }
+  .thumbnails-container .arrows {
+    display: block;
+  }
 }
